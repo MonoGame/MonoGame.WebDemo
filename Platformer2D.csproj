@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net47</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="MonoGame\MonoGame.Framework\MonoGame.Framework.Bridge.csproj">
+    </ProjectReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Retyped.dom" Version="2.8.6733" />
+    <PackageReference Include="Bridge" Version="17.2.0" />
+  </ItemGroup>
+
+</Project>
