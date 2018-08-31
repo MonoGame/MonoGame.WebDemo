@@ -13,27 +13,21 @@ namespace Platformer2D
 		
         public static void Main()
 		{
-            var button = new HTMLButtonElement();
-            button.innerHTML = "Run Game";
-			document.body.appendChild(button);
-
-			var brelem = new HTMLBRElement();
-			document.body.appendChild(brelem);
-
 			var canvas = new HTMLCanvasElement();
 			canvas.width = 800;
 			canvas.height = 480;
 			canvas.id = "monogamecanvas";
 			document.body.appendChild(canvas);
 
-            button.onclick = (ev) =>
-            {
-				game = new PlatformerGame();
-				game.Run();
+			document.body.appendChild(new HTMLBRElement());
+			
+			var can = new HTMLCanvasElement();
+			can.width = 800;
+			can.height = 1024;
+			document.body.appendChild(can);
 
-				document.body.removeChild(brelem);
-				document.body.removeChild(button);
-			};
+			game = new PlatformerGame();
+			game.Run();
         }
     }
 }

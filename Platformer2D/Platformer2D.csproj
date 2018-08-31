@@ -72,6 +72,7 @@
     <None Remove="bridge\Content\Backgrounds\Layer2_0.png" />
     <None Remove="bridge\Content\Backgrounds\Layer2_1.png" />
     <None Remove="bridge\Content\Backgrounds\Layer2_2.png" />
+    <None Remove="bridge\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bridge\AlphaTestEffect.ogl.mgfxo">
@@ -243,6 +244,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="bridge\Content\Backgrounds\Layer2_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bridge\index.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

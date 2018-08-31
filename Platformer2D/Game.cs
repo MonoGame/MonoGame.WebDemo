@@ -33,6 +33,7 @@ namespace Platformer2D
         private int levelIndex = -1;
         private Level level;
         private bool wasContinuePressed;
+        private bool clicked;
 
         // When the time remaining is less than the warning time, it blinks on the hud
         private static readonly TimeSpan WarningTime = TimeSpan.FromSeconds(30);
@@ -59,8 +60,8 @@ namespace Platformer2D
 
             graphics.HardwareModeSwitch = false;
 
-            //graphics.PreferredBackBufferWidth = 800;
-            //graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 
             Accelerometer.Initialize();
@@ -91,7 +92,6 @@ namespace Platformer2D
             virtualGamePad = new VirtualGamePad(baseScreenSize, globalTransformation, GameContent.Texture.VirtualControlArrow);
             
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Play(GameContent.Songs.Music);
 
             LoadNextLevel();
         }
@@ -105,6 +105,16 @@ namespace Platformer2D
         {
             if (!GameContent.IsLoaded)
                 return;
+
+            if (!clicked)
+            {
+                clicked = Mouse.GetState().LeftButton == ButtonState.Pressed;
+
+                if (clicked)
+                    MediaPlayer.Play(GameContent.Songs.Music);
+                    
+                return;
+            }
 
             // Handle polling for our input and handling high-level input
             HandleInput(gameTime);
@@ -183,15 +193,26 @@ namespace Platformer2D
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            if (!GameContent.IsLoaded)
+            if (!GameContent.IsLoaded || !clicked)
             {
                 graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 
                 if (GameContent.IsBaseLoaded)
                 {
+                    var size = GameContent.Font.hudFont.MeasureString("Click on game area to start it!");
+
                     spriteBatch.Begin();
-                    spriteBatch.DrawString(GameContent.Font.hudFont, "Platformer2D is loading: " + GameContent.Counter + " / 47", new Vector2(20, 440 - GameContent.Font.hudFont.MeasureString("C").Y - 10), Color.White);
-                    spriteBatch.Draw(GameContent.Texture.Pixel, new Rectangle(20, 440, (int)(760 * (GameContent.Counter / 47f)), 20), Color.White);
+                    
+                    if (GameContent.IsLoaded)
+                    {
+                        spriteBatch.DrawString(GameContent.Font.hudFont, "Click on game area to start it!", new Vector2(800 / 2 - size.X / 2, 480 / 2 - size.Y / 2), Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.DrawString(GameContent.Font.hudFont, "Platformer2D is loading: " + GameContent.Counter + " / 47", new Vector2(20, 440 - size.Y - 10), Color.White);
+                        spriteBatch.Draw(GameContent.Texture.Pixel, new Rectangle(20, 440, (int)(760 * (GameContent.Counter / 47f)), 20), Color.White);
+                    }
+                    
                     spriteBatch.End();
                 }
                 return;
