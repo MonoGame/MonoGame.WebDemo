@@ -17,9 +17,9 @@
     },
     "rules": {
         "anonymousType": "Plain",
-        "arrayIndex": "Managed",
+        "arrayIndex": "Plain",
         "autoProperty": "Plain",
-        "boxing": "Managed",
+        "boxing": "Plain",
         "integer": "Managed",
         "lambda": "Plain"
     },
