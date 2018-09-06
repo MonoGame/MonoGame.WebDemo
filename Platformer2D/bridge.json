@@ -1,6 +1,7 @@
 {
     "output": "$(OutDir)/bridge/",
     "outputFormatting": "Minified",
+    "usetypedarrays": true,
     "console": {
         "enabled": false
     },
