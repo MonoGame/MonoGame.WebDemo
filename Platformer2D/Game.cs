@@ -187,12 +187,24 @@ namespace Platformer2D
             LoadNextLevel();
         }
 
+        int frame = 0;
+        int frameCounter = 0;
+        int _lastTime = 0;
+
         /// <summary>
         /// Draws the game from background to foreground.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            if (gameTime.TotalGameTime.Seconds > _lastTime)
+            {
+                _lastTime = gameTime.TotalGameTime.Seconds;
+                frame = frameCounter;
+                frameCounter = 0;
+            }
+            frameCounter++;
+
             if (!GameContent.IsLoaded || !clicked)
             {
                 graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -259,6 +271,7 @@ namespace Platformer2D
             // Draw score
             float timeHeight = GameContent.Font.hudFont.MeasureString(timeString).Y;
             DrawShadowedString(GameContent.Font.hudFont, "SCORE: " + level.Score.ToString(), hudLocation + new Vector2(0.0f, timeHeight * 1.2f), Color.Yellow);
+            DrawShadowedString(GameContent.Font.hudFont, "FPS: " + frame, hudLocation + new Vector2(0.0f, timeHeight * 2.3f), Color.Yellow);
            
             // Determine the status overlay message to show.
             Texture2D status = null;
