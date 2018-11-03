@@ -17,27 +17,27 @@ namespace Platformer2D
         public static async Task Init(ContentManager content, GraphicsDevice graphics)
         {
             Counter = 0;
-            Texture.Pixel = await Texture2D.FromURL(graphics, "Content/Pixel.png");
-            Font.hudFont = content.Load<SpriteFont>("Fonts/Hud");
+            Texture.Pixel = await content.LoadAsync<Texture2D>("Pixel");
+            Font.hudFont = await content.LoadAsync<SpriteFont>("Fonts/Hud");
             IsBaseLoaded = true;
 
-            Texture.winOverlay = await Texture2D.FromURL(graphics, "Content/Overlays/you_win.png"); Counter++;
-            Texture.loseOverlay = await Texture2D.FromURL(graphics, "Content/Overlays/you_lose.png"); Counter++;
-            Texture.diedOverlay = await Texture2D.FromURL(graphics, "Content/Overlays/you_died.png"); Counter++;
-            Texture.VirtualControlArrow = await Texture2D.FromURL(graphics, "Content/Sprites/VirtualControlArrow.png"); Counter++;
-            Texture.Idle = await Texture2D.FromURL(graphics, "Content/Sprites/Player/Idle.png"); Counter++;
-            Texture.Run = await Texture2D.FromURL(graphics, "Content/Sprites/Player/Run.png"); Counter++;
-            Texture.Jump = await Texture2D.FromURL(graphics, "Content/Sprites/Player/Jump.png"); Counter++;
-            Texture.Celebrate = await Texture2D.FromURL(graphics, "Content/Sprites/Player/Celebrate.png"); Counter++;
-            Texture.Die = await Texture2D.FromURL(graphics, "Content/Sprites/Player/Die.png"); Counter++;
-            Texture.Gem = await Texture2D.FromURL(graphics, "Content/Sprites/Gem.png"); Counter++;
+            Texture.winOverlay = await content.LoadAsync<Texture2D>("Overlays/you_win"); Counter++;
+            Texture.loseOverlay = await content.LoadAsync<Texture2D>("Overlays/you_lose"); Counter++;
+            Texture.diedOverlay = await content.LoadAsync<Texture2D>("Overlays/you_died"); Counter++;
+            Texture.VirtualControlArrow = await content.LoadAsync<Texture2D>("Sprites/VirtualControlArrow"); Counter++;
+            Texture.Idle = await content.LoadAsync<Texture2D>("Sprites/Player/Idle"); Counter++;
+            Texture.Run = await content.LoadAsync<Texture2D>("Sprites/Player/Run"); Counter++;
+            Texture.Jump = await content.LoadAsync<Texture2D>("Sprites/Player/Jump"); Counter++;
+            Texture.Celebrate = await content.LoadAsync<Texture2D>("Sprites/Player/Celebrate"); Counter++;
+            Texture.Die = await content.LoadAsync<Texture2D>("Sprites/Player/Die"); Counter++;
+            Texture.Gem = await content.LoadAsync<Texture2D>("Sprites/Gem"); Counter++;
 
             Texture.BackgroundLayer = new Texture2D[3,3];
             for (int x = 0; x < 3; x++)
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    Texture.BackgroundLayer[x, y] = await Texture2D.FromURL(graphics, "Content/Backgrounds/Layer" + x + "_" + y + ".png");
+                    Texture.BackgroundLayer[x, y] = await content.LoadAsync<Texture2D>("Backgrounds/Layer" + x + "_" + y);
                     Counter++;
                 }
             }
@@ -46,24 +46,24 @@ namespace Platformer2D
             Texture.MonsterRun = new Texture2D[4];
             for (int i = 0; i < 4; i++)
             {
-                Texture.MonsterIdle[i] = await Texture2D.FromURL(graphics, "Content/Sprites/Monster" + i + "/Idle.png"); Counter++;
-                Texture.MonsterRun[i] = await Texture2D.FromURL(graphics, "Content/Sprites/Monster" + i + "/Run.png"); Counter++;
+                Texture.MonsterIdle[i] = await content.LoadAsync<Texture2D>("Sprites/Monster" + i + "/Idle"); Counter++;
+                Texture.MonsterRun[i] = await content.LoadAsync<Texture2D>("Sprites/Monster" + i + "/Run"); Counter++;
             }
 
             Texture.Tiles = new Dictionary<string, Texture2D>();
-            Texture.Tiles["BlockA0"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA0.png"); Counter++;
-            Texture.Tiles["BlockA1"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA1.png"); Counter++;
-            Texture.Tiles["BlockA2"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA2.png"); Counter++;
-            Texture.Tiles["BlockA3"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA3.png"); Counter++;
-            Texture.Tiles["BlockA4"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA4.png"); Counter++;
-            Texture.Tiles["BlockA5"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA5.png"); Counter++;
-            Texture.Tiles["BlockA6"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockA6.png"); Counter++;
-            Texture.Tiles["BlockB0"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockB0.png"); Counter++;
-            Texture.Tiles["BlockB1"] = await Texture2D.FromURL(graphics, "Content/Tiles/BlockB1.png"); Counter++;
-            Texture.Tiles["Exit"] = await Texture2D.FromURL(graphics, "Content/Tiles/Exit.png"); Counter++;
-            Texture.Tiles["Platform"] = await Texture2D.FromURL(graphics, "Content/Tiles/Platform.png"); Counter++;
+            Texture.Tiles["BlockA0"] = await content.LoadAsync<Texture2D>("Tiles/BlockA0"); Counter++;
+            Texture.Tiles["BlockA1"] = await content.LoadAsync<Texture2D>("Tiles/BlockA1"); Counter++;
+            Texture.Tiles["BlockA2"] = await content.LoadAsync<Texture2D>("Tiles/BlockA2"); Counter++;
+            Texture.Tiles["BlockA3"] = await content.LoadAsync<Texture2D>("Tiles/BlockA3"); Counter++;
+            Texture.Tiles["BlockA4"] = await content.LoadAsync<Texture2D>("Tiles/BlockA4"); Counter++;
+            Texture.Tiles["BlockA5"] = await content.LoadAsync<Texture2D>("Tiles/BlockA5"); Counter++;
+            Texture.Tiles["BlockA6"] = await content.LoadAsync<Texture2D>("Tiles/BlockA6"); Counter++;
+            Texture.Tiles["BlockB0"] = await content.LoadAsync<Texture2D>("Tiles/BlockB0"); Counter++;
+            Texture.Tiles["BlockB1"] = await content.LoadAsync<Texture2D>("Tiles/BlockB1"); Counter++;
+            Texture.Tiles["Exit"] = await content.LoadAsync<Texture2D>("Tiles/Exit"); Counter++;
+            Texture.Tiles["Platform"] = await content.LoadAsync<Texture2D>("Tiles/Platform"); Counter++;
 
-            Songs.Music = await Song.FromURL("Content/Sounds/Music.ogg"); Counter++;
+            Songs.Music = await content.LoadAsync<Song>("Sounds/Music"); Counter++;
 
             SoundEffects.killedSound = await SoundEffect.FromURL("Content/Sounds/PlayerKilled.wav"); Counter++;
             SoundEffects.jumpSound = await SoundEffect.FromURL("Content/Sounds/PlayerJump.wav"); Counter++;

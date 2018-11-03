@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net47</TargetFramework>
+    <MonoGamePlatform>DesktopGL</MonoGamePlatform>
   </PropertyGroup>
   
   <ItemGroup>
@@ -10,258 +11,19 @@
   </ItemGroup>
   
   <ItemGroup>
+    <PackageReference Include="MonoGame.Content.Builder" Version="3.7.0.9" />
     <PackageReference Include="Retyped.dom" Version="2.8.6733" />
     <PackageReference Include="Bridge" Version="17.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="bridge\AlphaTestEffect.ogl.mgfxo" />
-    <None Remove="bridge\BasicEffect.ogl.mgfxo" />
-    <None Remove="bridge\DualTextureEffect.ogl.mgfxo" />
-    <None Remove="bridge\EnvironmentMapEffect.ogl.mgfxo" />
-    <None Remove="bridge\SkinnedEffect.ogl.mgfxo" />
-    <None Remove="bridge\SpriteEffect.ogl.mgfxo" />
-    <None Remove="bridge\Content\Pixel.png" />
-    <None Remove="bridge\Content\Tiles\BlockB0.png" />
-    <None Remove="bridge\Content\Tiles\BlockB1.png" />
-    <None Remove="bridge\Content\Tiles\Exit.png" />
-    <None Remove="bridge\Content\Tiles\Platform.png" />
-    <None Remove="bridge\Content\Tiles\BlockA6.png" />
-    <None Remove="bridge\Content\Tiles\BlockA5.png" />
-    <None Remove="bridge\Content\Tiles\BlockA4.png" />
-    <None Remove="bridge\Content\Tiles\BlockA3.png" />
-    <None Remove="bridge\Content\Sprites\VirtualControlArrow.png" />
-    <None Remove="bridge\Content\Tiles\BlockA0.png" />
-    <None Remove="bridge\Content\Tiles\BlockA1.png" />
-    <None Remove="bridge\Content\Tiles\BlockA2.png" />
-    <None Remove="bridge\Content\Sprites\Gem.png" />
-    <None Remove="bridge\Content\Sprites\Player\Die.png" />
-    <None Remove="bridge\Content\Sprites\Player\Idle.png" />
-    <None Remove="bridge\Content\Sprites\Player\Jump.png" />
-    <None Remove="bridge\Content\Sprites\Player\Run.png" />
-    <None Remove="bridge\Content\Sprites\Player\Celebrate.png" />
-    <None Remove="bridge\Content\Sprites\Monster3\Run.png" />
-    <None Remove="bridge\Content\Sprites\Monster3\Idle.png" />
-    <None Remove="bridge\Content\Sprites\Monster2\Idle.png" />
-    <None Remove="bridge\Content\Sprites\Monster2\Run.png" />
-    <None Remove="bridge\Content\Sprites\Monster1\Run.png" />
-    <None Remove="bridge\Content\Sprites\Monster1\Idle.png" />
-    <None Remove="bridge\Content\Sprites\Monster0\Run.png" />
-    <None Remove="bridge\Content\Sprites\Monster0\Idle.png" />
-    <None Remove="bridge\Content\Sounds\ExitReached.wav" />
-    <None Remove="bridge\Content\Sounds\GemCollected.wav" />
-    <None Remove="bridge\Content\Sounds\MonsterKilled.wav" />
-    <None Remove="bridge\Content\Sounds\Music.ogg" />
-    <None Remove="bridge\Content\Sounds\PlayerFall.wav" />
-    <None Remove="bridge\Content\Sounds\PlayerJump.wav" />
-    <None Remove="bridge\Content\Sounds\PlayerKilled.wav" />
-    <None Remove="bridge\Content\Sounds\Powerup.wav" />
-    <None Remove="bridge\Content\Overlays\you_died.png" />
-    <None Remove="bridge\Content\Overlays\you_lose.png" />
-    <None Remove="bridge\Content\Overlays\you_win.png" />
-    <None Remove="bridge\Content\Levels\0.txt" />
-    <None Remove="bridge\Content\Levels\1.txt" />
-    <None Remove="bridge\Content\Levels\2.txt" />
-    <None Remove="bridge\Content\Fonts\Hud.xnb" />
-    <None Remove="bridge\Content\Backgrounds\Layer0_0.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer0_1.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer0_2.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer1_0.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer1_1.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer1_2.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer2_0.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer2_1.png" />
-    <None Remove="bridge\Content\Backgrounds\Layer2_2.png" />
-    <None Remove="bridge\index.html" />
+    <Content Include="index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="bridge\AlphaTestEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\BasicEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\DualTextureEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\EnvironmentMapEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\SkinnedEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\SpriteEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Pixel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockB0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockB1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\Exit.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\Platform.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA6.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA5.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\VirtualControlArrow.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Tiles\BlockA2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Gem.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Player\Die.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Player\Idle.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Player\Jump.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Player\Run.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Player\Celebrate.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster3\Run.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster3\Idle.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster2\Idle.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster2\Run.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster1\Run.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster1\Idle.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster0\Run.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sprites\Monster0\Idle.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\ExitReached.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\GemCollected.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\MonsterKilled.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\Music.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\PlayerFall.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\PlayerJump.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\PlayerKilled.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Sounds\Powerup.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Overlays\you_died.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Overlays\you_lose.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Overlays\you_win.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Levels\0.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Levels\1.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Levels\2.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Fonts\Hud.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer0_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer0_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer0_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer1_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer1_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer1_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer2_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer2_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\Content\Backgrounds\Layer2_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bridge\index.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <MonoGameContentReference Include="**\*.mgcb" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="bridge\DualTextureEffect.ogl.mgfxo">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="bridge\Content\Pixel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="bridge\Content\Tiles\BlockA2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="bridge\Content\Sprites\Gem.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+
 </Project>
